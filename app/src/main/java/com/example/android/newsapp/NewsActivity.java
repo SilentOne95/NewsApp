@@ -1,8 +1,12 @@
 package com.example.android.newsapp;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import java.util.ArrayList;
@@ -34,6 +38,25 @@ public class NewsActivity extends AppCompatActivity {
         // Set the adapter on the {@link ListView}
         // so the list can be populated in the user interface
         newsListView.setAdapter(mAdapter);
+
+        // Set an item click listener on the ListView, which sends an intent to a web browser
+        // to open a website with more information about the selected article.
+        newsListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
+                // Find the current article that was clicked on
+                News currentArticle = mAdapter.getItem(position);
+
+                // Convert the String URL into a URI object to pass into the Intent constructor
+                Uri articleUri = Uri.parse(currentArticle.getUrl());
+
+                // Create a new intent to view the article URI
+                Intent websiteIntent = new Intent(Intent.ACTION_VIEW, articleUri);
+
+                // Send the intent to launch a new activity
+                startActivity(websiteIntent);
+            }
+        });
 
         // Start the AsyncTask to fetch the news data
         NewsAsyncTask task = new NewsAsyncTask();

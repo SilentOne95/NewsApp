@@ -11,8 +11,7 @@
         android:layout_height="wrap_content"
         android:paddingBottom="5dp"
         android:textSize="20sp"
-        android:textColor="#1551c3"
-        android:textStyle="bold"/>
+        android:textColor="#1551c3" />
 
     <TextView
         android:id="@+id/author"
@@ -20,7 +19,14 @@
         android:layout_height="wrap_content"
         android:paddingBottom="5dp"
         android:textSize="20sp"
-        android:textColor="#ff0000"
-        android:textStyle="bold"/>
+        android:textColor="#ff0000" />
+
+    <TextView
+        android:id="@+id/date"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="5dp"
+        android:textSize="20sp"
+        android:textColor="#000" />
 
 </LinearLayout>

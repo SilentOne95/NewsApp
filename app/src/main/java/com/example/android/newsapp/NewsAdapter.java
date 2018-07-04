@@ -40,7 +40,7 @@ public class NewsAdapter extends ArrayAdapter<News> {
         View listItemView = convertView;
         if (listItemView == null) {
             listItemView = LayoutInflater.from(getContext()).inflate(
-                    R.layout.list_item,parent,false);
+                    R.layout.list_item, parent,false);
         }
 
         // Find the article at the given position in the list of articles
@@ -58,13 +58,12 @@ public class NewsAdapter extends ArrayAdapter<News> {
 
         // TODO: Fix issue with displaying date to the user
         // Create a new Date object from the time in milliseconds of the article
-//        Date dateObject = new Date(currentNews.getDate());
+
         // Find the TextView with view ID date
-//        TextView dateView = listItemView.findViewById(R.id.date);
+
         // Format the date string
-//        String formattedDate = formatDate(dateObject);
+
         // Display the date of the current article in that TextView
-//        dateView.setText(dateView);
 
         return listItemView;
     }

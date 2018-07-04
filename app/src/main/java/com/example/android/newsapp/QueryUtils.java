@@ -158,7 +158,8 @@ public final class QueryUtils {
                 JSONObject c = results.getJSONObject(i);
 
                 String title = c.getString("webTitle");
-                String time = c.optString("webPublicationDate");
+                // TODO: Parse object using "webPublicationDate" key
+
                 String url = c.optString("webUrl");
 
                 JSONArray tags = c.getJSONArray("tags");
@@ -172,7 +173,7 @@ public final class QueryUtils {
                 String fullName = builder.toString().toUpperCase();
 
                 // Create a new {@link News} object with the title and author from the JSON response.
-                News article = new News(title, fullName, time, url);
+                News article = new News(title, fullName, url);
 
                 // Add the new {@link News} to the list of articles.
                 news.add(article);

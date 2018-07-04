@@ -1,5 +1,7 @@
 package com.example.android.newsapp;
 
+import java.util.Date;
+
 /**
  * An {@link News} object contains information related to a single article.
  */
@@ -12,7 +14,7 @@ public class News {
     private String mAuthor;
 
     /** Time of the article publication */
-    private String mDate;
+
 
     /** Website URL of the full article */
     private String mUrl;
@@ -23,10 +25,9 @@ public class News {
      * @param date is the publication date of the article
      * @param url is the url to the article
      */
-    public News(String title, String author, String date, String url) {
+    public News(String title, String author, String url) {
         mTitle = title;
         mAuthor = author;
-        mDate = date;
         mUrl = url;
     }
 
@@ -37,7 +38,7 @@ public class News {
     public String getAuthor() { return mAuthor; }
 
     /** Returns the publication date of the article */
-    public String getDate() { return mDate; }
+
 
     /** Returns the url to the article */
     public String getUrl() { return mUrl; }

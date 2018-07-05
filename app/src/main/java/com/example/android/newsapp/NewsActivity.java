@@ -33,6 +33,9 @@ public class NewsActivity extends AppCompatActivity
     /** Adapter for the list of articles */
     private NewsAdapter mAdapter;
 
+    /** TextView that is displayed when the list is empty */
+    private TextView mEmptyStateTextView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,6 +43,10 @@ public class NewsActivity extends AppCompatActivity
 
         // Find a reference to the {@link ListView} in the layout
         ListView newsListView = findViewById(R.id.list);
+
+        // Setting up empty TextView
+        mEmptyStateTextView = findViewById(R.id.empty_view);
+        newsListView.setEmptyView(mEmptyStateTextView);
 
         // Create a new adapter that takes an empty list of earthquakes as input
         mAdapter = new NewsAdapter(this, new ArrayList<News>());
@@ -85,6 +92,9 @@ public class NewsActivity extends AppCompatActivity
 
     @Override
     public void onLoadFinished(Loader<List<News>> loader, List<News> news) {
+        // Set empty state text to display "No articles found."
+        mEmptyStateTextView.setText(R.string.no_articles);
+
         // Clear the adapter of previous news data
         mAdapter.clear();
 

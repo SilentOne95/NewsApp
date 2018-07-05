@@ -1,12 +1,14 @@
 package com.example.android.newsapp;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
@@ -56,14 +58,11 @@ public class NewsAdapter extends ArrayAdapter<News> {
         // Display the author of the current article in that TextView
         authorView.setText(currentNews.getAuthor());
 
-        // TODO: Fix issue with displaying date to the user
-        // Create a new Date object from the time in milliseconds of the article
-
         // Find the TextView with view ID date
-
-        // Format the date string
-
-        // Display the date of the current article in that TextView
+        TextView dateView = listItemView.findViewById(R.id.date);
+        // Format date and then
+        // display the date of the current article in that TextView
+        dateView.setText(formatDate(currentNews.getDate()));
 
         return listItemView;
     }
@@ -71,9 +70,20 @@ public class NewsAdapter extends ArrayAdapter<News> {
     /**
      * Return the formatted date string from a Date object
      */
-    private String formatDate(Date dateObject) {
-        SimpleDateFormat dateFormat = new SimpleDateFormat("LLL dd, yyyy");
-        return dateFormat.format(dateObject);
+    private String formatDate(String dateTime) {
+        String[] dateParts = dateTime.split("T");
+        String yearMonthDay = dateParts[0];
+        SimpleDateFormat parser = new SimpleDateFormat("yyyy-MM-dd");
+        Date myDate = null;
+        try {
+            myDate = parser.parse(yearMonthDay);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        SimpleDateFormat timeFormat = new SimpleDateFormat("MM-dd, yyyy");
+        String finalDate = timeFormat.format(myDate);
+
+        return finalDate;
     }
 
 }

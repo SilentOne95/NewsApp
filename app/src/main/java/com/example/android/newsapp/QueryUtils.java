@@ -153,27 +153,32 @@ public final class QueryUtils {
 
             JSONArray results = jsonTest.getJSONArray("results");
 
+            String fullName;
             // Looping through all objects
             for (int i = 0; i < results.length(); i++) {
                 JSONObject c = results.getJSONObject(i);
 
                 String title = c.getString("webTitle");
-                // TODO: Parse object using "webPublicationDate" key
-
+                String dateTime = c.optString("webPublicationDate");
                 String url = c.optString("webUrl");
 
                 JSONArray tags = c.getJSONArray("tags");
 
-                JSONObject obj = tags.getJSONObject(0);
-                String authorName = obj.optString("firstName");
-                String authorLastName = obj.optString("lastName");
+                // Checking if there is an author name
+                if (!tags.isNull(0)) {
+                    JSONObject obj = tags.getJSONObject(0);
+                    String authorName = obj.optString("firstName");
+                    String authorLastName = obj.optString("lastName");
 
-                StringBuilder builder = new StringBuilder();
-                builder.append(authorName).append(" ").append(authorLastName);
-                String fullName = builder.toString().toUpperCase();
+                    StringBuilder builder = new StringBuilder();
+                    builder.append(authorName).append(" ").append(authorLastName);
+                    fullName = builder.toString().toUpperCase();
+                } else {
+                    fullName = "Unknown author";
+                }
 
                 // Create a new {@link News} object with the title and author from the JSON response.
-                News article = new News(title, fullName, url);
+                News article = new News(title, fullName, dateTime, url);
 
                 // Add the new {@link News} to the list of articles.
                 news.add(article);

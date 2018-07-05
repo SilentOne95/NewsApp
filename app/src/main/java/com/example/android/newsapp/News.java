@@ -1,7 +1,5 @@
 package com.example.android.newsapp;
 
-import java.util.Date;
-
 /**
  * An {@link News} object contains information related to a single article.
  */

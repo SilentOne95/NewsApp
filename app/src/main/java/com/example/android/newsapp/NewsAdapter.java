@@ -79,8 +79,8 @@ public class NewsAdapter extends ArrayAdapter<News> {
         } catch (ParseException e) {
             e.printStackTrace();
         }
-        SimpleDateFormat timeFormat = new SimpleDateFormat("MM-dd, yyyy");
-        String finalDate = timeFormat.format(myDate);
+        SimpleDateFormat timeFormat = new SimpleDateFormat("MMM dd, yyyy");
+        String finalDate = timeFormat.format(myDate).toUpperCase();
 
         return finalDate;
     }

@@ -51,9 +51,10 @@ public class NewsAdapter extends ArrayAdapter<News> {
             private TextView dateView;
         }
 
-        // TODO: ViewHolder
         ViewHolder holder;
 
+        // Check if there is any existing list item view (called convertView) that we can reuse,
+        // otherwise, if convertView is null, then inflate a new list item layout.
         if (convertView == null) {
             listItemView = LayoutInflater.from(getContext()).inflate(R.layout.list_item, null);
             holder = new ViewHolder();
@@ -74,41 +75,6 @@ public class NewsAdapter extends ArrayAdapter<News> {
         holder.dateView.setText(formatDate(currentNews.getDate()));
 
         return listItemView;
-
-
-        // Check if there is any existing list item view (called convertView) that we can reuse,
-        // otherwise, if convertView is null, then inflate a new list item layout.
-//        View listItemView = convertView;
-//        if (listItemView == null) {
-//            listItemView = LayoutInflater.from(getContext()).inflate(
-//                    R.layout.list_item, parent,false);
-//        }
-//
-//        // Find the article at the given position in the list of articles
-//        News currentNews = getItem(position);
-//
-//        // Find the TextView with view ID section
-//        TextView sectionView = listItemView.findViewById(R.id.section);
-//        // Display the section of the current article in that TextView
-//        sectionView.setText(currentNews.getSection());
-//
-//        // Find the TextView with view ID title
-//        TextView titleView = listItemView.findViewById(R.id.title);
-//        // Display the title of the current article in that TextView
-//        titleView.setText(currentNews.getTitle());
-//
-//        // Find the TextView with view ID author
-//        TextView authorView = listItemView.findViewById(R.id.author);
-//        // Display the author of the current article in that TextView
-//        authorView.setText(currentNews.getAuthor());
-//
-//        // Find the TextView with view ID date
-//        TextView dateView = listItemView.findViewById(R.id.date);
-//        // Format date and then
-//        // display the date of the current article in that TextView
-//        dateView.setText(formatDate(currentNews.getDate()));
-//
-//        return listItemView;
     }
 
     /**

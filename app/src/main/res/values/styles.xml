@@ -8,13 +8,28 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <!-- list_item activity -->
+
     <style name="basic_dimen_setting">
         <item name="android:layout_width">fill_parent</item>
         <item name="android:layout_height">wrap_content</item>
     </style>
 
-    <style name="relative_layout" parent="basic_dimen_setting">
+    <style name="custom_text_view">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/author_text_size</item>
+    </style>
+
+    <style name="section_text_view" parent="custom_text_view">
+        <item name="android:textColor">@color/sectionTextView</item>
         <item name="android:padding">@dimen/ten_dp</item>
+    </style>
+
+    <style name="relative_layout" parent="basic_dimen_setting">
+        <item name="android:paddingLeft">@dimen/ten_dp</item>
+        <item name="android:paddingRight">@dimen/ten_dp</item>
+        <item name="android:paddingBottom">@dimen/ten_dp</item>
     </style>
 
     <style name="title_text_view" parent="basic_dimen_setting">
@@ -24,12 +39,9 @@
         <item name="android:textColor">@color/colorPrimary</item>
     </style>
 
-    <style name="author_text_view">
-        <item name="android:layout_width">wrap_content</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:paddingBottom">@dimen/bottom_padding_text_view</item>
-        <item name="android:textSize">@dimen/author_text_size</item>
+    <style name="author_text_view" parent="custom_text_view">
         <item name="android:textColor">@color/colorAccent</item>
+        <item name="android:paddingBottom">@dimen/bottom_padding_text_view</item>
     </style>
 
     <style name="date_text_view" parent="author_text_view">

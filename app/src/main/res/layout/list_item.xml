@@ -5,6 +5,10 @@
     style="@style/basic_dimen_setting">
 
     <TextView
+        android:id="@+id/section"
+        style="@style/section_text_view" />
+
+    <TextView
         android:id="@+id/title"
         style="@style/title_text_view"/>
 

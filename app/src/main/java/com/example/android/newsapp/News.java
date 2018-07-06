@@ -5,6 +5,9 @@ package com.example.android.newsapp;
  */
 public class News {
 
+    /** Section name of the article */
+    private String mSection;
+
     /** Title of the article */
     private String mTitle;
 
@@ -23,12 +26,16 @@ public class News {
      * @param date is the publication date of the article
      * @param url is the url to the article
      */
-    public News(String title, String author, String date, String url) {
+    public News(String section, String title, String author, String date, String url) {
+        mSection = section;
         mTitle = title;
         mAuthor = author;
         mDate = date;
         mUrl = url;
     }
+
+    /** Returns the section of the aricle */
+    public String getSection() { return mSection; }
 
     /** Returns the title of the article. */
     public String getTitle() { return mTitle; }

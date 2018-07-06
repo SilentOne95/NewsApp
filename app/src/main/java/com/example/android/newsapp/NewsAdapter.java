@@ -7,6 +7,8 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
+import org.w3c.dom.Text;
+
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -30,12 +32,70 @@ public class NewsAdapter extends ArrayAdapter<News> {
         super(context, 0, news);
     }
 
+    // TODO: ViewHolder
+//    public class CustomName {
+//        private String section;
+//        private String title;
+//        private String author;
+//        private String date;
+//
+//        public CustomName(String section, String title, String author, String date) {
+//            this.section = section;
+//            this.title = title;
+//            this.author = author;
+//            this.date = date;
+//        }
+//
+//        public String getSection() { return section; }
+//        public String getTitle() { return title; }
+//        public String getAuthor() { return author; }
+//        public String getDate() { return date; }
+//
+//        public void setSection(String section) { this.section = section; }
+//        public void setTitle(String title) { this.title = title; }
+//        public void setAuthor(String author) { this.author = author; }
+//        public void setDate(String date) { this.date = date; }
+//    }
+//
+//    static class ViewHolder {
+//        private TextView sectionView;
+//        private TextView titleView;
+//        private TextView authorView;
+//        private TextView dateView;
+//    }
+
     /**
      * Returns a list item view that displays information about the earthquake at the given position
      * in the list of articles.
      */
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
+
+        // TODO: ViewHolder
+//        ViewHolder holder;
+//
+//        if (convertView == null) {
+//            convertView = LayoutInflater.from(getContext()).inflate(R.layout.list_item, null);
+//            holder = new ViewHolder();
+//            holder.sectionView = convertView.findViewById(R.id.section);
+//            holder.titleView = convertView.findViewById(R.id.title);
+//            holder.authorView = convertView.findViewById(R.id.author);
+//            holder.dateView = convertView.findViewById(R.id.date);
+//            convertView.setTag(holder);
+//        } else {
+//            holder = (ViewHolder) convertView.getTag();
+//        }
+//
+//        CustomName customName = getItem(position);
+//
+//        holder.sectionView.setText(customName.getSection());
+//        holder.titleView.setText(customName.getTitle());
+//        holder.authorView.setText(customName.getAuthor());
+//        holder.dateView.setText(customName.getDate());
+//
+//        return convertView;
+
+
         // Check if there is any existing list item view (called convertView) that we can reuse,
         // otherwise, if convertView is null, then inflate a new list item layout.
         View listItemView = convertView;
@@ -46,6 +106,11 @@ public class NewsAdapter extends ArrayAdapter<News> {
 
         // Find the article at the given position in the list of articles
         News currentNews = getItem(position);
+
+        // Find the TextView with view ID section
+        TextView sectionView = listItemView.findViewById(R.id.section);
+        // Display the section of the current article in that TextView
+        sectionView.setText(currentNews.getSection());
 
         // Find the TextView with view ID title
         TextView titleView = listItemView.findViewById(R.id.title);

@@ -158,6 +158,7 @@ public final class QueryUtils {
             for (int i = 0; i < results.length(); i++) {
                 JSONObject c = results.getJSONObject(i);
 
+                String section = c.getString("sectionName");
                 String title = c.getString("webTitle");
                 String dateTime = c.optString("webPublicationDate");
                 String url = c.optString("webUrl");
@@ -178,7 +179,7 @@ public final class QueryUtils {
                 }
 
                 // Create a new {@link News} object with the title and author from the JSON response.
-                News article = new News(title, fullName, dateTime, url);
+                News article = new News(section, title, fullName, dateTime, url);
 
                 // Add the new {@link News} to the list of articles.
                 news.add(article);

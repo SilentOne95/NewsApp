@@ -3,4 +3,6 @@
     <color name="colorPrimary">#000</color>
     <color name="colorPrimaryDark">#696969</color>
     <color name="colorAccent">#808080</color>
+
+    <color name="sectionTextView">#4347ff</color>
 </resources>

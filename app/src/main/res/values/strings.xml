@@ -5,4 +5,22 @@
     <string name="no_articles">No articles found :(
         \nPlease reload the app or check after some time.</string>
     <string name="no_internet_connection">No Internet Connection :(</string>
+
+    <!-- Setting Menu Item [CHAR LIMIT = NONE] -->
+    <string name="settings_menu_item">Settings</string>
+    <!-- Settings Activity Title [CHAR LIMIT = NONE] -->
+    <string name="settings_title">News settings</string>
+
+    <!-- Strings for display topic preference [CHAR LIMIT = 30] -->
+    <string name="settings_display_label">Display</string>
+    <string name="settings_display_key" translatable="false">sectionName</string>
+    <string name="settings_display_default" translatable="false">@string/settings_display_football_label</string>
+
+    <!-- Label for default topic option [CHAR LIMIT=20] -->
+    <string name="settings_display_football_label">Football</string>
+    <string name="settings_display_football_value" translatable="false">football</string>
+
+    <!-- Label for display topic options [CHAR LIMIT=20] -->
+    <string name="settings_display_politics_label">Politics</string>
+    <string name="settings_display_politics_value" translatable="false">politics</string>
 </resources>

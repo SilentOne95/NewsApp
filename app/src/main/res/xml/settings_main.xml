@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:title="@string/settings_title">
+
+    <ListPreference
+        android:defaultValue="@string/settings_display_football_value"
+        android:entries="@array/settings_display_labels"
+        android:entryValues="@array/settings_display_values"
+        android:key="@string/settings_display_key"
+        android:title="@string/settings_display_label"/>
+
+</PreferenceScreen>

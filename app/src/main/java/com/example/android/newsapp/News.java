@@ -26,7 +26,7 @@ public class News {
      * @param date is the publication date of the article
      * @param url is the url to the article
      */
-    public News(String section, String title, String author, String date, String url) {
+    News(String section, String title, String author, String date, String url) {
         mSection = section;
         mTitle = title;
         mAuthor = author;
@@ -48,5 +48,4 @@ public class News {
 
     /** Returns the url to the article */
     public String getUrl() { return mUrl; }
-
 }

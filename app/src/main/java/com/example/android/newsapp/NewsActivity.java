@@ -25,14 +25,9 @@ import java.util.List;
 public class NewsActivity extends AppCompatActivity
         implements LoaderManager.LoaderCallbacks<List<News>> {
 
-    private static final String LOG_TAG = NewsActivity.class.getName();
-
     String apiKey = BuildConfig.ApiKey;
     /** URL for articles data from the GUARDIAN dataset */
     private final String GUARDIAN_REQUEST_URL = "https://content.guardianapis.com/search";
-
-//    private final String GUARDIAN_REQUEST_URL =
-//            "https://content.guardianapis.com/search?q=politics%20AND%20football&show-tags=contributor&api-key=" + apiKey;
 
     /**
      * Constant value for the news loader ID. We can choose any integer.
